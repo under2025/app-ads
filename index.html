@@ -33,66 +33,37 @@
             color: theme('colors.primary-dark');
             font-weight: 700;
         }
-        /* Стили для широкого логотипа студии */
-        .studio-logo-container {
-            height: 120px; 
-            background-color: #1F2937; /* bg-gray-800, для контраста с черным фоном сайта */
-            padding: 1rem 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-        .studio-logo-container img {
-            width: 90%; 
-            max-width: 1024px;
-            height: auto;
-            object-fit: contain;
-        }
-
-        /* Стили для изображения названия игры */
-        .game-title-img-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem 0; /* Отступы вокруг изображения */
-        }
-        .game-title-img-container img {
-            max-width: 80%; /* Максимальная ширина, чтобы не было слишком огромным */
-            height: auto;
-            object-fit: contain;
-        }
-        @media (min-width: 768px) { /* Десктоп */
-            .game-title-img-container img {
-                max-width: 60%;
-            }
-        }
     </style>
 </head>
 <body class="bg-primary-dark text-white font-sans antialiased">
 
-    <!-- LANGUAGE SELECTOR -->
+    <!-- LANGUAGE SELECTOR: Убрана опция RU, по умолчанию UK активна -->
     <div class="fixed top-4 right-4 z-50 bg-secondary-gray rounded-full shadow-xl flex p-1">
-        <button id="lang-ru" data-lang="ru" class="lang-button active px-3 py-1 text-sm rounded-full transition duration-150 hover:bg-gray-600">RU</button>
-        <button id="lang-uk" data-lang="uk" class="lang-button px-3 py-1 text-sm rounded-full transition duration-150 hover:bg-gray-600">UK</button>
+        <button id="lang-uk" data-lang="uk" class="lang-button active px-3 py-1 text-sm rounded-full transition duration-150 hover:bg-gray-600">UK</button>
         <button id="lang-en" data-lang="en" class="lang-button px-3 py-1 text-sm rounded-full transition duration-150 hover:bg-gray-600">EN</button>
     </div>
 
     <!-- HERO SECTION: Главный экран -->
     <header class="text-center">
-        <!-- ЛОГОТИП СТУДИИ (Широкий) -->
-        <div class="studio-logo-container w-full mb-8 shadow-2xl">
-            <!-- Внешняя ссылка на логотип студии -->
-            <img src="https://i.ibb.co/C0V4k1M/UNDER-GAME-logo.png" 
-                 alt="Логотип студии UNDER GAME" 
-                 class="w-full h-full object-contain">
+        
+        <!-- ТЕКСТ: Название Студии -->
+        <div class="w-full bg-gray-800 py-6 mb-4 shadow-2xl">
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-widest text-gray-300 uppercase">
+                UNDER GAME
+            </h1>
         </div>
 
         <div class="container mx-auto px-4 py-8 md:py-16">
-            <!-- ИЗОБРАЖЕНИЕ НАЗВАНИЯ ИГРЫ (ОБНОВЛЕННЫЙ ЛОКАЛЬНЫЙ ПУТЬ) -->
-            <div class="game-title-img-container">
-                <img src="./assets/game_title.png" alt="THE BREACH - Логотип игры" class="">
+            <!-- ТЕКСТ: Название Игры -->
+            <div class="py-8 md:py-16">
+                <h2 class="text-6xl sm:text-7xl md:text-9xl font-black uppercase text-accent-blue tracking-tighter" 
+                    style="text-shadow: 0 0 10px rgba(59, 130, 246, 0.7);">
+                    THE BREACH
+                </h2>
             </div>
+            <p class="text-xl md:text-2xl text-gray-400 font-semibold mb-12" data-key="hero_tagline">
+                Игра находится в разработке
+            </p>
         </div>
     </header>
 
@@ -104,7 +75,7 @@
             <!-- Кнопка Google Play -->
             <a href="https://play.google.com/store/apps/dev?id=6505467657963180706" target="_blank"
                 class="w-full md:w-80 flex items-center justify-center p-4 bg-accent-blue hover:bg-accent-hover transition duration-300 rounded-xl shadow-xl transform hover:scale-[1.02] active:scale-[0.98]">
-                <!-- Иконка Google Play -->
+                <!-- Иконка Google Play (SVG) -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-3 fill-current text-white" viewBox="0 0 24 24">
                     <path d="M16.59 9H13V3h-2v6H7.41L12 13.59zM19 18H5v-2h14v2z" fill="none"/>
                     <path d="M4 3v18l7-7 4-4 7-7z" fill="white"/>
@@ -116,7 +87,7 @@
             <div class="w-full md:w-80 flex flex-col items-center">
                 <button disabled
                     class="w-full flex items-center justify-center p-4 bg-gray-500 cursor-not-allowed rounded-xl opacity-80 shadow-inner">
-                    <!-- Иконка App Store -->
+                    <!-- Иконка App Store (SVG) -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-3 fill-current text-white" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zm0 18.5c-3.037 0-5.5-2.463-5.5-5.5s2.463-5.5 5.5-5.5 5.5 2.463 5.5 5.5-2.463 5.5-5.5 5.5zm0-9c-1.933 0-3.5 1.567-3.5 3.5s1.567 3.5 3.5 3.5 3.5-1.567 3.5-3.5-1.567-3.5-3.5-3.5z"/>
                     </svg>
@@ -129,7 +100,7 @@
         </div>
     </section>
 
-    <!-- SCREENSHOTS SECTION: Скриншоты -->
+    <!-- SCREENSHOTS SECTION: Скриншоты (Используются только плейсхолдеры) -->
     <section id="screenshots" class="container mx-auto px-4 py-12 md:py-20">
         <h2 class="text-3xl font-bold text-center mb-10" data-key="scr_header">Скриншоты из игры</h2>
         
@@ -172,28 +143,28 @@
             
             <h3 class="text-xl font-bold mb-4" data-key="footer_header">Следите за нами!</h3>
             
-            <!-- Социальные иконки -->
+            <!-- Социальные иконки (SVG) -->
             <div class="flex justify-center space-x-6 mb-8">
                 
-                <!-- Instagram (Placeholder URL) -->
-                <a href="#" target="_blank" aria-label="Instagram"
+                <!-- Instagram (Обновленная ссылка) -->
+                <a href="https://www.instagram.com/undergames_official?igsh=dG5yN3FmbW9kYXRr&utm_source=qr" target="_blank" aria-label="Instagram"
                     class="text-gray-300 hover:text-pink-500 transition duration-300 transform hover:scale-110">
-                    <!-- Instagram Icon (SVG) -->
+                    <!-- Instagram Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 </a>
 
-                <!-- YouTube (Placeholder URL) -->
-                <a href="#" target="_blank" aria-label="YouTube"
+                <!-- YouTube (Обновленная ссылка) -->
+                <a href="https://youtube.com/@undergames_official?si=S75bX01noulobfqD" target="_blank" aria-label="YouTube"
                     class="text-gray-300 hover:text-red-600 transition duration-300 transform hover:scale-110">
-                    <!-- YouTube Icon (SVG) -->
+                    <!-- YouTube Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-youtube"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2A71.5 71.5 0 0 0 12 5c-4.47 0-9.87.12-11.6.42a2.78 2.78 0 0 0-1.94 2.15C0 8.87 0 12 0 12s0 3.13.46 5.58a2.78 2.78 0 0 0 1.94 2A71.5 71.5 0 0 0 12 19c4.47 0 9.87-.12 11.6-.42a2.78 2.78 0 0 0 1.94-2.15C24 15.13 24 12 24 12s0-3.13-.46-5.58z"></path><polygon points="9 16 16 12 9 8 9 16"></polygon></svg>
                 </a>
 
-                <!-- TikTok (Placeholder URL) -->
-                <a href="#" target="_blank" aria-label="TikTok"
-                    class="text-gray-300 hover:text-gray-900 transition duration-300 transform hover:scale-110">
-                    <!-- TikTok Icon (SVG) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12.536 2.023a10.007 10.007 0 0 0-1.31-0.081 10.015 10.015 0 0 0-8.914 5.923 10.004 10.004 0 0 0 1.701 15.82 10.01 10.01 0 0 0 11.536-2.583v-4.887a1 1 0 0 1 0.16-.502l0.245-0.28a1 1 0 0 1 0.76-0.34h2.296V10.704h-2.296a1 1 0 0 1-0.76-0.34l-0.245-0.28a1 1 0 0 1-0.16-0.502V4.545a1 1 0 0 1 0.16-.502l0.245-0.28a1 1 0 0 1 0.76-0.34h2.296V2.023H12.536zM13.8 4.295v3.155a1 1 0 0 1-0.16.502l-0.245 0.28a1 1 0 0 1-0.76 0.34h-2.296v4.887a1 1 0 0 1-0.16.502l-0.245 0.28a1 1 0 0 1-0.76 0.34H8.4v2.261a1 1 0 0 0 0.16.502l0.245 0.28a1 1 0 0 0 0.76 0.34h2.296v2.544c-3.134-0.101-5.694-2.738-5.694-5.918 0-3.284 2.622-5.922 5.864-5.922h2.296a1 1 0 0 1 0.76 0.34l0.245 0.28a1 1 0 0 1 0.16 0.502z"/></svg>
+                <!-- Telegram (Заменил TikTok) -->
+                <a href="https://t.me/undergame_studio" target="_blank" aria-label="Telegram"
+                    class="text-gray-300 hover:text-sky-400 transition duration-300 transform hover:scale-110">
+                    <!-- Telegram Icon (SVG) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-5.522 0-10 4.478-10 10s4.478 10 10 10 10-4.478 10-10S17.522 2 12 2zm4.12 6.848c-.084 1.353-1.002 6.786-1.18 7.828-.152.88-.475 1.144-.8.825-.37-.374-1.428-.97-2.095-1.554-.627-.55-1.196-.34-1.57.19-.48.67-.323 1.054-.323 1.054s-.42 1.488-1.597 1.834c-.23.064-.448.096-.645.096-.453 0-.64-.208-.948-.52-.614-.624-.624-1.748.882-2.868 2.08-1.58 3.553-2.616 4.904-3.666 1.765-1.378 2.115-1.63 2.502-1.63.15 0 .42.062.593.136.21.087.42.274.526.47.164.298.164.71.164.71z"/></svg>
                 </a>
             </div>
 
@@ -208,6 +179,7 @@
         // Объект с переводами
         const translations = {
             'ru': {
+                'hero_tagline': 'Игра находится в разработке',
                 'download_header': 'Скачать игру',
                 'app_store_coming_soon': 'Скоро',
                 'scr_header': 'Скриншоты из игры',
@@ -219,6 +191,7 @@
                 'footer_copy': 'Студия: UNDER GAME. &copy; 2025 Все права защищены.',
             },
             'uk': {
+                'hero_tagline': 'Гра знаходиться в розробці',
                 'download_header': 'Завантажити гру',
                 'app_store_coming_soon': 'Незабаром',
                 'scr_header': 'Скріншоти з гри',
@@ -230,6 +203,7 @@
                 'footer_copy': 'Студія: UNDER GAME. &copy; 2025 Всі права захищено.',
             },
             'en': {
+                'hero_tagline': 'Game is currently under development',
                 'download_header': 'Download Game',
                 'app_store_coming_soon': 'Coming Soon',
                 'scr_header': 'Game Screenshots',
@@ -268,8 +242,12 @@
 
         // Обработчики событий для кнопок и начальная загрузка
         document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('gameLang') || 'ru';
-            setLanguage(savedLang);
+            // Если сохранен русский язык или язык не сохранен, используем украинский как новый стандарт.
+            let initialLang = localStorage.getItem('gameLang');
+            if (!initialLang || initialLang === 'ru') {
+                initialLang = 'uk'; // Новый язык по умолчанию, так как RU убран из UI
+            }
+            setLanguage(initialLang);
 
             document.querySelectorAll('.lang-button').forEach(button => {
                 button.addEventListener('click', (e) => {
