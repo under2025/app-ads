@@ -1,10 +1,284 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="ru">
+<head>
     <meta charset="UTF-8">
-    <title>app-ads.txt</title>
-  </head>
-  <body>
-    <h1>google.com, pub-8408176283081560, DIRECT, f08c47fec0942fa0</h1>
-  </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE BREACH | Официальный Сайт Игры</title>
+    <!-- Подключение Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Настройка конфигурации Tailwind CSS -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#000000', /* Полностью черный фон */
+                        'secondary-gray': '#374151',
+                        'accent-blue': '#3B82F6',
+                        'accent-hover': '#2563EB',
+                        'active-lang': '#10B981', /* Emerald */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Установка шрифта Inter (Google Fonts) и кастомные стили -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+        .lang-button.active {
+            background-color: theme('colors.active-lang');
+            color: theme('colors.primary-dark');
+            font-weight: 700;
+        }
+        /* Стили для широкого логотипа студии */
+        .studio-logo-container {
+            height: 120px; 
+            background-color: #1F2937; /* bg-gray-800, для контраста с черным фоном сайта */
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .studio-logo-container img {
+            width: 90%; 
+            max-width: 1024px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Стили для изображения названия игры */
+        .game-title-img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 0; /* Отступы вокруг изображения */
+        }
+        .game-title-img-container img {
+            max-width: 80%; /* Максимальная ширина, чтобы не было слишком огромным */
+            height: auto;
+            object-fit: contain;
+        }
+        @media (min-width: 768px) { /* Десктоп */
+            .game-title-img-container img {
+                max-width: 60%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-primary-dark text-white font-sans antialiased">
+
+    <!-- LANGUAGE SELECTOR -->
+    <div class="fixed top-4 right-4 z-50 bg-secondary-gray rounded-full shadow-xl flex p-1">
+        <button id="lang-ru" data-lang="ru" class="lang-button active px-3 py-1 text-sm rounded-full transition duration-150 hover:bg-gray-600">RU</button>
+        <button id="lang-uk" data-lang="uk" class="lang-button px-3 py-1 text-sm rounded-full transition duration-150 hover:bg-gray-600">UK</button>
+        <button id="lang-en" data-lang="en" class="lang-button px-3 py-1 text-sm rounded-full transition duration-150 hover:bg-gray-600">EN</button>
+    </div>
+
+    <!-- HERO SECTION: Главный экран -->
+    <header class="text-center">
+        <!-- ЛОГОТИП СТУДИИ (Широкий) -->
+        <div class="studio-logo-container w-full mb-8 shadow-2xl">
+            <!-- Внешняя ссылка на логотип студии -->
+            <img src="https://i.ibb.co/C0V4k1M/UNDER-GAME-logo.png" 
+                 alt="Логотип студии UNDER GAME" 
+                 class="w-full h-full object-contain">
+        </div>
+
+        <div class="container mx-auto px-4 py-8 md:py-16">
+            <!-- ИЗОБРАЖЕНИЕ НАЗВАНИЯ ИГРЫ (ОБНОВЛЕННЫЙ ЛОКАЛЬНЫЙ ПУТЬ) -->
+            <div class="game-title-img-container">
+                <img src="./assets/game_title.png" alt="THE BREACH - Логотип игры" class="">
+            </div>
+        </div>
+    </header>
+
+    <!-- DOWNLOAD SECTION: Кнопки скачивания -->
+    <section id="download" class="container mx-auto px-4 py-12 md:py-20 bg-secondary-gray/50 rounded-2xl shadow-2xl mb-16 md:mb-24">
+        <h2 class="text-3xl font-bold text-center mb-10" data-key="download_header">Скачать игру</h2>
+        <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-8">
+
+            <!-- Кнопка Google Play -->
+            <a href="https://play.google.com/store/apps/dev?id=6505467657963180706" target="_blank"
+                class="w-full md:w-80 flex items-center justify-center p-4 bg-accent-blue hover:bg-accent-hover transition duration-300 rounded-xl shadow-xl transform hover:scale-[1.02] active:scale-[0.98]">
+                <!-- Иконка Google Play -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-3 fill-current text-white" viewBox="0 0 24 24">
+                    <path d="M16.59 9H13V3h-2v6H7.41L12 13.59zM19 18H5v-2h14v2z" fill="none"/>
+                    <path d="M4 3v18l7-7 4-4 7-7z" fill="white"/>
+                </svg>
+                <span class="text-xl font-bold">Google Play</span>
+            </a>
+
+            <!-- Кнопка App Store (Скоро) -->
+            <div class="w-full md:w-80 flex flex-col items-center">
+                <button disabled
+                    class="w-full flex items-center justify-center p-4 bg-gray-500 cursor-not-allowed rounded-xl opacity-80 shadow-inner">
+                    <!-- Иконка App Store -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-3 fill-current text-white" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zm0 18.5c-3.037 0-5.5-2.463-5.5-5.5s2.463-5.5 5.5-5.5 5.5 2.463 5.5 5.5-2.463 5.5-5.5 5.5zm0-9c-1.933 0-3.5 1.567-3.5 3.5s1.567 3.5 3.5 3.5 3.5-1.567 3.5-3.5-1.567-3.5-3.5-3.5z"/>
+                    </svg>
+                    <span class="text-xl font-bold">App Store</span>
+                </button>
+                <p class="text-sm text-gray-400 mt-2" data-key="app_store_coming_soon">
+                    Скоро
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREENSHOTS SECTION: Скриншоты -->
+    <section id="screenshots" class="container mx-auto px-4 py-12 md:py-20">
+        <h2 class="text-3xl font-bold text-center mb-10" data-key="scr_header">Скриншоты из игры</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Скриншот 1 (Плейсхолдер) -->
+            <div class="bg-secondary-gray rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:shadow-accent-blue/50">
+                <img src="https://placehold.co/800x450/1F2937/FFFFFF?text=Скриншот+1" 
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x450/1F2937/FFFFFF?text=Скриншот+1+недоступен';"
+                     alt="Скриншот 1: Игровой процесс" class="w-full h-auto object-cover rounded-t-xl" loading="lazy">
+                <p class="p-3 text-center text-gray-300 text-sm" data-key="scr_desc_1">Погрузитесь в атмосферу!</p>
+            </div>
+
+            <!-- Скриншот 2 (Плейсхолдер) -->
+            <div class="bg-secondary-gray rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:shadow-accent-blue/50">
+                <img src="https://placehold.co/800x450/1F2937/FFFFFF?text=Скриншот+2" 
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x450/1F2937/FFFFFF?text=Скриншот+2+недоступен';"
+                     alt="Скриншот 2: Уникальный дизайн" class="w-full h-auto object-cover rounded-t-xl" loading="lazy">
+                <p class="p-3 text-center text-gray-300 text-sm" data-key="scr_desc_2">Уникальный стиль и графика.</p>
+            </div>
+
+            <!-- Скриншот 3 (Плейсхолдер) -->
+            <div class="bg-secondary-gray rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:shadow-accent-blue/50">
+                <img src="https://placehold.co/800x450/1F2937/FFFFFF?text=Скриншот+3" 
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x450/1F2937/FFFFFF?text=Скриншот+3+недоступен';"
+                     alt="Скриншот 3: Боевая система" class="w-full h-auto object-cover rounded-t-xl" loading="lazy">
+                <p class="p-3 text-center text-gray-300 text-sm" data-key="scr_desc_3">Динамичные сражения!</p>
+            </div>
+        </div>
+
+        <p class="text-center text-gray-500 mt-10 text-sm italic" data-key="scr_note">
+            *Представлены концептуальные изображения. Финальная версия может отличаться.
+        </p>
+
+    </section>
+
+    <!-- FOOTER SECTION: Социальные сети и информация о студии -->
+    <footer class="bg-secondary-gray/50 py-10">
+        <div class="container mx-auto px-4 text-center">
+            
+            <h3 class="text-xl font-bold mb-4" data-key="footer_header">Следите за нами!</h3>
+            
+            <!-- Социальные иконки -->
+            <div class="flex justify-center space-x-6 mb-8">
+                
+                <!-- Instagram (Placeholder URL) -->
+                <a href="#" target="_blank" aria-label="Instagram"
+                    class="text-gray-300 hover:text-pink-500 transition duration-300 transform hover:scale-110">
+                    <!-- Instagram Icon (SVG) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+
+                <!-- YouTube (Placeholder URL) -->
+                <a href="#" target="_blank" aria-label="YouTube"
+                    class="text-gray-300 hover:text-red-600 transition duration-300 transform hover:scale-110">
+                    <!-- YouTube Icon (SVG) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-youtube"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2A71.5 71.5 0 0 0 12 5c-4.47 0-9.87.12-11.6.42a2.78 2.78 0 0 0-1.94 2.15C0 8.87 0 12 0 12s0 3.13.46 5.58a2.78 2.78 0 0 0 1.94 2A71.5 71.5 0 0 0 12 19c4.47 0 9.87-.12 11.6-.42a2.78 2.78 0 0 0 1.94-2.15C24 15.13 24 12 24 12s0-3.13-.46-5.58z"></path><polygon points="9 16 16 12 9 8 9 16"></polygon></svg>
+                </a>
+
+                <!-- TikTok (Placeholder URL) -->
+                <a href="#" target="_blank" aria-label="TikTok"
+                    class="text-gray-300 hover:text-gray-900 transition duration-300 transform hover:scale-110">
+                    <!-- TikTok Icon (SVG) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12.536 2.023a10.007 10.007 0 0 0-1.31-0.081 10.015 10.015 0 0 0-8.914 5.923 10.004 10.004 0 0 0 1.701 15.82 10.01 10.01 0 0 0 11.536-2.583v-4.887a1 1 0 0 1 0.16-.502l0.245-0.28a1 1 0 0 1 0.76-0.34h2.296V10.704h-2.296a1 1 0 0 1-0.76-0.34l-0.245-0.28a1 1 0 0 1-0.16-0.502V4.545a1 1 0 0 1 0.16-.502l0.245-0.28a1 1 0 0 1 0.76-0.34h2.296V2.023H12.536zM13.8 4.295v3.155a1 1 0 0 1-0.16.502l-0.245 0.28a1 1 0 0 1-0.76 0.34h-2.296v4.887a1 1 0 0 1-0.16.502l-0.245 0.28a1 1 0 0 1-0.76 0.34H8.4v2.261a1 1 0 0 0 0.16.502l0.245 0.28a1 1 0 0 0 0.76 0.34h2.296v2.544c-3.134-0.101-5.694-2.738-5.694-5.918 0-3.284 2.622-5.922 5.864-5.922h2.296a1 1 0 0 1 0.76 0.34l0.245 0.28a1 1 0 0 1 0.16 0.502z"/></svg>
+                </a>
+            </div>
+
+            <p class="text-sm text-gray-400" data-key="footer_copy">
+                Студия: UNDER GAME. &copy; 2025 Все права защищены.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript для переключения языка -->
+    <script>
+        // Объект с переводами
+        const translations = {
+            'ru': {
+                'download_header': 'Скачать игру',
+                'app_store_coming_soon': 'Скоро',
+                'scr_header': 'Скриншоты из игры',
+                'scr_desc_1': 'Погрузитесь в атмосферу!',
+                'scr_desc_2': 'Уникальный стиль и графика.',
+                'scr_desc_3': 'Динамичные сражения!',
+                'scr_note': '*Представлены концептуальные изображения. Финальная версия может отличаться.',
+                'footer_header': 'Следите за нами!',
+                'footer_copy': 'Студия: UNDER GAME. &copy; 2025 Все права защищены.',
+            },
+            'uk': {
+                'download_header': 'Завантажити гру',
+                'app_store_coming_soon': 'Незабаром',
+                'scr_header': 'Скріншоти з гри',
+                'scr_desc_1': 'Пориньте в атмосферу!',
+                'scr_desc_2': 'Унікальний стиль та графіка.',
+                'scr_desc_3': 'Динамічні битви!',
+                'scr_note': '*Представлені концептуальні зображення. Фінальна версія може відрізнятися.',
+                'footer_header': 'Слідкуйте за нами!',
+                'footer_copy': 'Студія: UNDER GAME. &copy; 2025 Всі права захищено.',
+            },
+            'en': {
+                'download_header': 'Download Game',
+                'app_store_coming_soon': 'Coming Soon',
+                'scr_header': 'Game Screenshots',
+                'scr_desc_1': 'Dive into the atmosphere!',
+                'scr_desc_2': 'Unique style and graphics.',
+                'scr_desc_3': 'Dynamic battles!',
+                'scr_note': '*Conceptual images are presented. The final version may differ.',
+                'footer_header': 'Follow Us!',
+                'footer_copy': 'Studio: UNDER GAME. &copy; 2025 All rights reserved.',
+            }
+        };
+
+        // Функция для установки языка
+        function setLanguage(lang) {
+            const currentTranslations = translations[lang];
+            if (!currentTranslations) return;
+
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (currentTranslations[key]) {
+                    element.textContent = currentTranslations[key];
+                }
+            });
+
+            document.querySelectorAll('.lang-button').forEach(button => {
+                button.classList.remove('active');
+                if (button.getAttribute('data-lang') === lang) {
+                    button.classList.add('active');
+                }
+            });
+
+            localStorage.setItem('gameLang', lang);
+        }
+
+        // Обработчики событий для кнопок и начальная загрузка
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('gameLang') || 'ru';
+            setLanguage(savedLang);
+
+            document.querySelectorAll('.lang-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const lang = e.target.getAttribute('data-lang');
+                    setLanguage(lang);
+                });
+            });
+        });
+    </script>
+</body>
 </html>
+
